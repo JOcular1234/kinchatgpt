@@ -22,9 +22,14 @@ export default function Home() {
   const [currentChatId, setCurrentChatId] = useState(null);
 
   // Persist history to localStorage whenever it changes
+  /**
+   * Saves the chat history to localStorage whenever it changes.
+   *
+   * @return {void}
+   */
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('chatHistory', JSON.stringify(history));
+      localStorage.setItem('chatHistory', JSON.stringify(history))
     }
   }, [history]);
   const chatRef = useRef(null);
@@ -227,15 +232,15 @@ export default function Home() {
         {/* Header */}
         <header className="fixed top-0 w-full h-16 flex justify-between items-center px-6 bg-white dark:bg-gray-800 shadow-lg z-10">
           <div className="flex items-center gap-3">
-            <img src="/mindseekdark.png" alt="mindseeklightmode" className="w-24 hidden dark:block" />
-            <img src="/mindseeklightmode.png" alt="mindseekdarkmode" className="w-24 block dark:hidden" />
+            <img src="/kinChAT1.png" alt="kinchat" className="w-24 hidden dark:block" />
+            <img src="/kinchatdarkmode.png" alt="kinchatdarkmode" className="w-24 block dark:hidden" />
           </div>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
           >
             {isDarkMode ? (
-              <SunIcon className="w-6 h-6 text-yellow-400" />
+              <SunIcon className="w-6 h-6 text-white" />
             ) : (
               <MoonIcon className="w-6 h-6 text-gray-600" />
             )}
@@ -249,8 +254,8 @@ export default function Home() {
         >
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-center text-gray-500 dark:text-gray-400">
-              <img src="/mindseekdark.png" alt="mindseekdark Logo" className="w-48 hidden dark:block mb-4" />
-              <img src="/mindseeklightmode.png" alt="mindseeklight Logo" className="w-48 block dark:hidden mb-4" />
+              <img src="/kinChAT1.png" alt="kinchat" className="w-48 hidden dark:block mb-4" />
+              <img src="/kinchatdarkmode.png" alt="kinchatdarkmode" className="w-48 block dark:hidden mb-4" />
               <p className="text-lg">Ask anything to start the conversation!</p>
             </div>
           )}
